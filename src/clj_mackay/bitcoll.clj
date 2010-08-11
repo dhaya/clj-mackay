@@ -26,8 +26,8 @@
     (new-coll [this size] nil))
 
 (defn as-seq
-  "Needed since clojure.lang.Seqable is still not a protocol, hence it would
-   be possible to just extend that for the concrete type."
+  "Returns a seq of booleans corresponding to the bits of the bitcoll. This is
+   needed since clojure.lang.Seqable is yet to become a protocol."
   [bitcoll]
   (->> (range (size bitcoll))
        (map #(get-bit bitcoll %))))
